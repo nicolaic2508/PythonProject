@@ -2,9 +2,8 @@ import streamlit as st
 import pyttsx3
 import speech_recognition as sr
 
-#READ BEFORE RUNNING: Enter into terminal: streamlit run main.py
+#READ BEFORE RUNNING: To run you have to enter into terminal: streamlit run main.py
 
-#test to have one working save
 
 #stores transcriptions so they do not disappear when multiple are created
 if 'l' not in st.session_state:
@@ -32,7 +31,7 @@ if st.session_state.b:
         st.session_state.l2 = [" "]
         st.rerun()
     #audio
-    aud = st.audio_input("Click once to transcribe, click a second time to print transcription")
+    aud = st.audio_input("Click once to transcribe, click a second time once audio is over")
 
     if aud:
         #takes recording and saves it
@@ -70,9 +69,20 @@ else:
         #writes down statement
         st.session_state.l2.insert(0,tex)
     but2 = st.button("Play")
+
+
+
     if but2:
         #reads out statement
         player.say(st.session_state.l2[0])
         player.runAndWait()
+        au = player.save_to_file(st.session_state.l2[0],'speak.mp3')
+        with open("speak.mp3", "rb") as f:
+            data = f.read()
+        st.download_button(
+            label="Download audio",
+            data=data,
+            file_name="speak.mp3",
+        )
 
 #hi
