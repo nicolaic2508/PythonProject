@@ -2,7 +2,7 @@ import streamlit as st
 import pyttsx3
 import speech_recognition as sr
 
-#READ BEFORE RUNNING: To run you have to enter into terminal: streamlit run main.py
+
 
 
 #stores transcriptions so they do not disappear when multiple are created
