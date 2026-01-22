@@ -1,0 +1,5 @@
+streamlit
+pyttsx3
+speech_recognition
+espeak-ng
+alsa-utils
