@@ -2,6 +2,5 @@
     "python-env.workspaceSearchPaths": [
 
     ],
-    "python.analysis.autoImportCompletions": true,
-    "python.defaultInterpreterPath": "usr/local/python/3.12.1"
+    "python.analysis.autoImportCompletions": true
 }
