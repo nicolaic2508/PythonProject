@@ -2,7 +2,7 @@
   "name": "Streamlit Codespace",
   "image": "mcr.microsoft.com/devcontainers/python:3.11",
 
-  "postCreateCommand": "pip install --upgrade pip && pip install -r requirements.txt",
+  "postCreateCommand": "pip install --upgrade pip && pip install -r requirements.txt && sudo apt update && sudo apt install -y espeak-ng",
 
   "postStartCommand": "python -m streamlit run app.py",
 
