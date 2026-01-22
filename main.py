@@ -73,5 +73,12 @@ else:
         #reads out statement
         player.say(st.session_state.l2[0])
         player.runAndWait()
-
+        au = player.save_to_file(st.session_state.l2[0],'speak.mp3')
+        with open("speak.mp3", "rb") as f:
+            data = f.read()
+        st.download_button(
+            label="Download audio",
+            data=data,
+            file_name="speak.mp3",
+        )
 #hi
